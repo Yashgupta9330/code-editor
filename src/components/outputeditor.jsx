@@ -11,7 +11,7 @@ const OutputEditor = () => {
       try {
         const username = window.location.pathname.split('/').pop();
         console.log(username);
-        const response = await axios.get(`http://localhost:4000/response?username=${username}`);
+        const response = await axios.get(`https://codeditor-server.onrender.com/response?username=${username}`);
         console.log(response.data);
         if(response.data){
         setCodes(response.data);
@@ -31,7 +31,7 @@ const OutputEditor = () => {
   }, []); 
   return (
     <div className='w-full h-screen text-white bg-black'>
-    <div className='mx-auto'>
+    <div className='mx-auto h-[700px] overflow-auto'>
     <table className=" border my-8 mx-auto  bg-black">
       <thead className='border'>
         <tr>
