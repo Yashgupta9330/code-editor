@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home  setData={setData}/>} /> 
-        <Route path="/:username" element={<OutputEditor />} />
+        <Route path="/:username/:token" element={<OutputEditor />} />
       </Routes>
     </Router>
   );

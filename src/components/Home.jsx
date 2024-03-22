@@ -27,14 +27,14 @@ const Home = ({setData}) => {
         };
         console.log(payload);
         try {
-            const response = await axios.post("https://codeditor-server.onrender.com/run", payload);
+            const response = await axios.post("http://localhost:4000/run", payload);
             console.log(response); 
             if (response.data.token) {
                 console.log(response.data.token);
                 console.log("setting data")
                 console.log(response.data)
                 setData(response.data);
-                navigate(`/${username}`);
+                navigate(`/${username}/${response.data.token}`);
             } else {
                 console.error("Token not found in response data"); 
             }
